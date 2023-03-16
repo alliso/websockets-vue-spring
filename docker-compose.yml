@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  backend:
+    image: maven:3.8.5-openjdk-17
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend:/usr/src/app
+    command: /bin/bash -c "tail -f /dev/null"
+    working_dir: /usr/src/app
+  frontend:
+    image: node:19
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/usr/src/app
+    command: /bin/bash -c "tail -f /dev/null"
+    working_dir: /usr/src/app
